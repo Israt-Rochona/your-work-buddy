@@ -17,5 +17,5 @@ def get_help(request):
 def service(request):
     return render (request,template_name='services\service.html')
 
-def more(request):
-    return render (request,template_name='services\more.html')
+def login(request):
+    return render (request,template_name='services\login.html')

@@ -8,25 +8,35 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'home' %}">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'about_us' %}">About us</a>
+     <li class="nav-item active">
+        <a class="nav-link" href="{% url 'about_us' %}">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="{% url 'service' %}">Services</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'service' %}">Services</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="{% url 'help' %}">Help</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'help' %}">Help</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link " href="{% url 'more' %}">More</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="{% url 'signup' %}">Signup</a>
-      </li>
+
+
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="right_nab">
+      <ul class="navbar-nav">
+                      <!-- Right side menu items (3 items) -->
+                      <li class="nav-item">
+                        <a class="nav-link mr-3" href="{% url 'login'%}">Log In</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link " href="{% url 'signup'%}">Sign Up</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <img class="logo-avatar" src="template/logo.png">
+                        </a>
+                      </li>
+                    </ul>
+
+    </div>
   </div>
 </nav>
