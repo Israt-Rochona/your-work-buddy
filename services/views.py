@@ -1,4 +1,7 @@
+from lib2to3.fixes.fix_input import context
+
 from django.shortcuts import render
+from.models import *
 
 # Create your views here.
 
@@ -15,7 +18,17 @@ def get_help(request):
     return render (request,template_name='services\help.html')
 
 def service(request):
-    return render (request,template_name='services\service.html')
+    service=Service.objects.all()
+    context = {
+        'service':service,
+    }
+    return render (request,template_name='services\service.html',context=context)
 
-def login(request):
-    return render (request,template_name='services\login.html')
+def provider(request):
+    pro= Provider.objects.all()
+    c = {
+        'provider':pro,
+    }
+    return render(request, template_name='services\provider.html',context=c)
+
+

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Service_provider,consumer,Service
+from .models import Provider,consumer,Service
 # Register your models here.
-admin.site.register([Service_provider,consumer,Service])
+admin.site.register([Provider,consumer,Service])

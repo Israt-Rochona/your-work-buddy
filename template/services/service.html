@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1> service page</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Service Id</th>
+      <th scope="col">Service name</th>
+      <th scope="col">Rate per hour</th>
+      <th scope="col">Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for p in service %}
+    <tr>
+      <td>{{p.service_id}}</td>
+      <td>{{p.service_name}}</td>
+      <td>{{p.rate_per_hour}}</td>
+      <td>{{p.duration}}</td>
+    </tr>
+
+{% endfor %}
+  </tbody>
+</table>
 {% endblock %}

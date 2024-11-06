@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Skills</th>
+      <th scope="col">Employment Type</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for p in pro %}
+    <tr>
+      <td>{{p.provider_id}}</td>
+      <td>{{p.provider_name}}</td>
+      <td>{{p.skills}}</td>
+      <td>{{p.employement_type}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock %}

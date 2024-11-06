@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
-class Service_provider(models.Model):
+class Provider(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     provider_name = models.CharField(max_length=200)
     provider_id = models.IntegerField()
@@ -27,7 +27,7 @@ class consumer(models.Model):
 
 class Service(models.Model):
     consumer_id = models.ForeignKey(consumer,on_delete=models.CASCADE,blank=True,null=True)
-    provider_id =  models.ForeignKey(Service_provider,on_delete=models.CASCADE,blank=True,null=True)
+    provider_id =  models.ForeignKey(Provider,on_delete=models.CASCADE,blank=True,null=True)
     service_id = models.IntegerField()
     service_name = models.CharField(max_length=200)
     description = models.TextField(blank=True,null=True)

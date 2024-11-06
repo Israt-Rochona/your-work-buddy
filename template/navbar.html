@@ -1,37 +1,76 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Work Buddy</title>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'home' %}">Home</a>
-      </li>
-     <li class="nav-item active">
-        <a class="nav-link" href="{% url 'about_us' %}">About</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'service' %}">Services</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'help' %}">Help</a>
-      </li>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
 
 
-    </ul>
-    <div class="right_nab">
-      <ul class="navbar-nav">
-                      <!-- Right side menu items (3 items) -->
+	<nav class="navbar navbar-expand-lg bg-custom p-3">
+	    <div class="container-fluid">
+	      <!-- Navbar brand -->
+
+	      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+
+	      <!-- Navbar content -->
+	      <div class="collapse navbar-collapse" id="navbarNav">
+
+
+
+
+	        <div class="d-flex justify-content-between">
+	        	<div style="padding-left:20px;">
+	        		<ul class="navbar-nav">
+			          <!-- Right side menu items (3 items) -->
+			          <li class="nav-item">
+			            <a class="nav-link" href="{% url 'home' %}">Home</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="{% url 'service' %}">Services</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="{% url 'about_us' %}">About</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="{% url 'help' %}">Help</a>
+			          </li>
+					  <li class="nav-item">
+			            <a class="nav-link" href="{% url 'provider' %}">Provider</a>
+			          </li>
+			          <li class="nav-item">
+			            <a class="nav-link" href="#">
+			            	<img class="nav-avatar" src="https://media.istockphoto.com/id/1451587807/vector/user-profile-icon-vector-avatar-or-person-icon-profile-picture-portrait-symbol-vector.jpg?s=612x612&w=0&k=20&c=yDJ4ITX1cHMh25Lt1vI1zBn2cAKKAlByHBvPJ8gEiIg=">
+			            </a>
+			          </li>
+	        		</ul>
+	        	</div>
+
+	        	<div style="padding-left: 600px;">
+	        		<ul class="navbar-nav">
+			          <!-- Right side menu items (3 items) -->
                       <li class="nav-item">
-                        <a class="nav-link mr-3" href="{% url 'login'%}">Log In</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link " href="{% url 'signup'%}">Sign Up</a>
-                      </li>
+			            <a class="nav-link" href="#">
+			            	<img class="logo-avatar" src="Logo.png">
+			            </a>
+			          </li>
 
-      </ul>
+			          <li class="nav-item">
+			            <a class="nav-link mr-3" href="{% url 'signup' %}">Sign Up</a>
+			          </li>
+			        </ul>
+	        	</div>
+	        </div>
+	      </div>
+	    </div>
+	</nav>
 
-    </div>
-  </div>
-</nav>
+</body>
+</html>
