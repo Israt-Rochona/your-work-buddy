@@ -2,10 +2,10 @@
 {% load static %}
 {% block content %}
 <table class="table">
-  <thead class="thead-dark">
+  <thead>
     <tr>
-      <th scope="col">Service Id</th>
-      <th scope="col">Service name</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
       <th scope="col">Rate per hour</th>
       <th scope="col">Duration</th>
     </tr>
@@ -13,13 +13,14 @@
   <tbody>
   {% for p in service %}
     <tr>
+
       <td>{{p.service_id}}</td>
       <td>{{p.service_name}}</td>
       <td>{{p.rate_per_hour}}</td>
-      <td>{{p.duration}}</td>
-    </tr>
+        <td>{{p.duration}}</td>
 
-{% endfor %}
+    </tr>
+   {% endfor %}
   </tbody>
 </table>
 {% endblock %}
