@@ -14,7 +14,7 @@ class Service_provider(models.Model):
 
 class consumer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    consumer_id = models.IntegerField(max_length=100)
+    consumer_id = models.IntegerField()
     consumer_name = models.CharField(max_length=200)
     email = models.EmailField()
     contact_info= models.IntegerField()
