@@ -18,7 +18,6 @@ def get_help(request):
     return render (request,template_name='services/help.html')
 
 def service(request):
-<<<<<<< HEAD
     service=Service.objects.all()
     context = {
         'service':service,
@@ -32,10 +31,27 @@ def provider(request):
     }
     return render(request, template_name='services\provider.html',context=c)
 
-
-=======
-    return render (request,template_name='services/service.html')
+def provider_detail(request , id):
+    pro= Provider.objects.get(pk=id)
+    c = {
+        'provider':pro,
+    }
+    return render(request, template_name='services\provider_details.html',context=c)
 
 def login(request):
     return render (request,template_name='services/login.html')
->>>>>>> 87cf173125d8819fd0f69d01c2507f1240138cc1
+
+
+def receiver(request):
+    pro= consumer.objects.all()
+    c = {
+        'consumer':pro,
+    }
+    return render(request, template_name='services\service_receiver.html',context=c)
+
+def receiver_detail(request , id) :
+    pro= consumer.objects.get(pk=id)
+    c = {
+        'consumer':pro,
+    }
+    return render(request, template_name='services\consumer_detail.html',context=c)

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Location</th>
+        <th scope="col">Details</th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for p in consumer %}
+      <tr>
+        <td>{{p.consumer_id}}</td>
+        <td>{{p.consumer_name}}</td>
+        <td>{{p.contact_info}}</td>
+        <td>{{p.location}}</td>
+        <td><a href="{% url 'receiver_detail' id=p.id %}" class="btn btn-info">View Details</a></td>
+      </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

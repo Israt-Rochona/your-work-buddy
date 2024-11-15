@@ -8,6 +8,13 @@ class Provider(models.Model):
     skills = models.TextField(max_length=1000)
     certification = models.BooleanField(blank=True,null=True)
     employement_type = models.CharField(max_length=200)
+    rating = models.FloatField(blank=True,null=True)
+    total_work = models.IntegerField(blank=True,null=True)
+    nid = models.IntegerField(blank=True,null=True)
+    contact_info= models.IntegerField(blank=True,null=True)
+    location = models.CharField(max_length=200,default="Default Location")
+
+
 
     def __str__(self):
         return self.provider_name

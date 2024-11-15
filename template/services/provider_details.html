@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Provider Details</h3>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Provider Name:</strong> {{ provider.provider_name }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Provider ID:</strong> {{ provider.provider_id }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Skills:</strong> {{ provider.skills }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Certification:</strong> {{ provider.certification }}
+                </div>
+            </div>
+            <div class="row mb-3">
+
+                <div class="col-md-6">
+                    <strong>Rating:</strong> {{ provider.rating }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Total Work:</strong> {{ provider.total_work }}
+                </div>
+                <div class="col-md-6">
+                    <strong>NID:</strong> {{ provider.nid }}
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <strong>Contact Info:</strong> {{ provider.contact_info }}
+                </div>
+                <div class="col-md-6">
+                    <strong>Location:</strong> {{ provider.location }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

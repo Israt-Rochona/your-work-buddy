@@ -28,7 +28,11 @@ urlpatterns = [
     path('help/', s_views.get_help, name='help'),
     path('service/', s_views.service, name='service'),
     path('signup/', s_views.signup, name='signup'),
-    path('/provider/',s_views.provider, name= 'provider'),
+    path('provider/',s_views.provider, name= 'provider'),
+
     path('login/', s_views.provider, name='login'),
+    path('provider/<int:id>/', s_views.provider_detail, name='provider_detail'),
+    path('receiver/<int:id>/', s_views.receiver_detail, name='receiver_detail'),
+    path('receiver/', s_views.receiver, name='receiver'),
 
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
