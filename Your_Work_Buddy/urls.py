@@ -35,4 +35,7 @@ urlpatterns = [
     path('receiver/<int:id>/', s_views.receiver_detail, name='receiver_detail'),
     path('receiver/', s_views.receiver, name='receiver'),
 
+    path('signup/provider/', s_views.AddNewProvider, name='new_provider'),
+    path('signup/receiver/', s_views.AddNewReceiver, name='new_receiver'),
+
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
