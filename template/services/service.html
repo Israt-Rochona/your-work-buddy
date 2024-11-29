@@ -1,26 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Rate per hour</th>
-      <th scope="col">Duration</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for p in service %}
-    <tr>
-
-      <td>{{p.service_id}}</td>
-      <td>{{p.service_name}}</td>
-      <td>{{p.rate_per_hour}}</td>
+<div class="container mt-3">
+  <div class="input-group mb-3">
+    <label for="category-select" class="form-label me-2 mr-3">Select a category:</label>
+    <select id="category-select" class="form-select">
+      <option value="">-- Select --</option>
+      <option value="cleaner">Cleaner</option>
+      <option value="driver">Driver</option>
+      <option value="security_guard">Security Guard</option>
+      <option value="house_keeper">House Keeper</option>
+      <option value="nanny">Nanny</option>
+    </select>
+    <button class="btn btn-primary ml-3" type="button">Search</button>
+  </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Rate per hour</th>
+        <th scope="col">Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for p in service %}
+      <tr>
+        <td>{{p.service_id}}</td>
+        <td>{{p.service_name}}</td>
+        <td>{{p.rate_per_hour}}</td>
         <td>{{p.duration}}</td>
-
-    </tr>
-   {% endfor %}
-  </tbody>
-</table>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}

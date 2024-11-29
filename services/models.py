@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password, check_password
 # Create your models here.
 class Provider(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     provider_name = models.CharField(max_length=200)
     provider_id = models.IntegerField()
     skills = models.TextField(max_length=1000)
@@ -13,14 +13,21 @@ class Provider(models.Model):
     nid = models.IntegerField(blank=True,null=True)
     contact_info= models.IntegerField(blank=True,null=True)
     location = models.CharField(max_length=200,default="Default Location")
+    # password = models.CharField(max_length=128,default="1234")
 
-
+    # def set_password(self, raw_password):
+    #     """Hashes the password and saves it to the model."""
+    #     self.password = make_password(raw_password)
+    #     self.save()
+    #
+    # def check_password(self, raw_password):
+    #     """Checks the raw password against the hashed password."""
+    #     return check_password(raw_password, self.password)
 
     def __str__(self):
         return self.provider_name
 
 class consumer(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     consumer_id = models.IntegerField()
     consumer_name = models.CharField(max_length=200)
     email = models.EmailField()
