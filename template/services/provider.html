@@ -6,11 +6,20 @@
     {% for p in provider %}
       <div class="col-md-4 col-lg-3 mb-4">
         <div class="card h-100">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-center">{{ p.provider_name }}</h5>
+          <div class="card-body d-flex flex-column align-items-center text-center">
+            <!-- Profile Picture -->
+            {% if p.picture %}
+              <img src="{{ p.picture.url }}" alt="Provider Picture" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+            {% else %}
+              <!-- Default Image -->
+              <img src="{% static 'user.png' %}" alt="Default Profile Picture" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+            {% endif %}
+            
+            <!-- Provider Info -->
+            <h5 class="card-title">{{ p.provider_name }}</h5>
             <p class="card-text"><strong>Certification:</strong> {{ p.certification }}</p>
             <p class="card-text"><strong>Location:</strong> {{ p.location }}</p>
-            <p class="card-text"><strong>Total Work Experience:</strong> {{ p.total_work }} years</p>
+<!--            <p class="card-text"><strong>Total Work Experience:</strong> {{ p.total_work }} years</p>-->
             <p class="card-text"><strong>Rating:</strong> {{ p.rating }} / 5</p>
             <p class="card-text"><strong>Skills:</strong> {{ p.skills }}</p>
             <a href="{% url 'provider_detail' id=p.id %}" class="btn btn-info mt-auto">View Details</a>

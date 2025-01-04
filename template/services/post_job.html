@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Post a Job</h2>
+    <form method="POST" action="{% url 'post_job' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="serviceName" class="form-label">Service Name</label>
+            <input type="text" class="form-control" id="serviceName" name="service_name" placeholder="Enter service name" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Describe the service" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="ratePerHour" class="form-label">Rate per Hour</label>
+            <input type="number" class="form-control" id="ratePerHour" name="rate_per_hour" placeholder="Enter rate per hour" step="0.01" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration (hours)</label>
+            <input type="number" class="form-control" id="duration" name="duration" placeholder="Enter duration in hours" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="serviceDate" class="form-label">Service Date</label>
+            <input type="date" class="form-control" id="serviceDate" name="service_date" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Enter location" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Post Job</button>
+    </form>
+</div>
+{% endblock %}

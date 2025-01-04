@@ -11,7 +11,17 @@
                 <div class="card-header text-center bg-success text-white">
                     <h3>Consumer Information</h3>
                 </div>
-                <div class="card-body">
+                <div class="card-body text-center">
+                    <!-- Consumer Picture -->
+                    <div class="mb-4">
+                        {% if consumer.picture %}
+                            <img src="{{ consumer.picture.url }}" alt="Consumer Picture" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                        {% else %}
+                            <img src="{% static 'user.png' %}" alt="Default Consumer Picture" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                        {% endif %}
+                    </div>
+
+                    <!-- Consumer Details -->
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <strong>Consumer ID:</strong> {{ consumer.consumer_id }}
@@ -32,9 +42,6 @@
                             <strong>NID:</strong> {{ consumer.nid }}
                         </li>
                     </ul>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn btn-info">Contact Consumer</a>
                 </div>
             </div>
         </div>

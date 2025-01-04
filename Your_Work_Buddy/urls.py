@@ -18,19 +18,34 @@ from django.conf.urls.i18n import urlpatterns
 from django.contrib import admin
 from django.urls import path
 from services import views as s_views
-from.import settings
 from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', s_views.login_view, name='login'),
     path('', s_views.home, name='home'),
     path('about_us/', s_views.about_us, name='about_us'),
+    path('contact_us/', s_views.contact_us, name='contact_us'),
     path('help/', s_views.get_help, name='help'),
     path('service/', s_views.service, name='service'),
-    path('signup/', s_views.signup, name='signup'),
+    path('register/', s_views.register_view, name='register'),
+    path('logout/', s_views.logout_view, name='logout'),
     path('provider/',s_views.provider, name= 'provider'),
 
-    path('login/', s_views.provider, name='login'),
+    path('profile/', s_views.profile_view, name='profile'),
+    path('service/<int:id>', s_views.service_detail, name='service_detail'),
+    path('job_status/', s_views.job_status, name='job_status'),
+    path('add_service_history/<int:service_id>/', s_views.add_service_history, name='add_service_history'),
+    path('active_schedule/', s_views.active_schedule, name='active_schedule'),
+
+    path('post-job/', s_views.post_job, name='post_job'),
+    path('requests/', s_views.requests_view, name='requests'),
+    path('approve_provider/<int:service_id>/<int:provider_id>/', s_views.approve_provider, name='approve_provider'),
+    path('scheduled_services/', s_views.scheduled_services, name='scheduled_services'),
+
+    path('rate/<int:provider_id>/<int:service_id>/', s_views.rate_provider, name='rate_provider'),
+
     path('provider/<int:id>/', s_views.provider_detail, name='provider_detail'),
     path('receiver/<int:id>/', s_views.receiver_detail, name='receiver_detail'),
     path('receiver/', s_views.receiver, name='receiver'),
@@ -38,4 +53,6 @@ urlpatterns = [
     path('signup/provider/', s_views.AddNewProvider, name='new_provider'),
     path('signup/receiver/', s_views.AddNewReceiver, name='new_receiver'),
 
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+] 
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
