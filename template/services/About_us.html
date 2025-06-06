@@ -2,36 +2,65 @@
 {% load static %}
 {% block content %}
 
+<div class="container py-5">
+    <!-- About Us -->
+    <div class="text-center mb-5">
+        <h1 class="mb-3">About Us</h1>
+        <p class="text-muted mx-auto" style="max-width: 700px;">
+            Welcome to <strong>YourWorkBuddy</strong>, where we believe that finding the right help should be simple and accessible for everyone.
+            Our platform serves as a bridge between dedicated job seekers and those in need of reliable services.
+        </p>
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- About Section -->
-        <section id="about" class="container my-5">
-            <h1>About Us</h1>
+    <div class="row align-items-center mb-5">
+        <div class="col-md-2 text-center">
+            <i class="bi bi-people-fill display-4 text-primary"></i>
+        </div>
+        <div class="col-md-10">
+            <h4 class="text-primary">Connecting People</h4>
             <p>
-                Welcome to YourWorkBuddy, where we believe that finding the right help should be simple and accessible for everyone. Our platform serves as a bridge between dedicated job seekers and those in need of reliable services. Whether you’re looking for a part-time nanny, a skilled plumber, a meticulous maid, or any other day-to-day service, we are here to connect you with the right people.
+                Whether you’re looking for a part-time nanny, a skilled plumber, or a meticulous maid, we connect you with trusted individuals ready to help.
+                Our goal is to make day-to-day service hiring hassle-free and transparent.
             </p>
-            <h3>Our Vision</h3>
-            <p>
-                At YourWorkBuddy, our mission is to empower individuals by providing a seamless and efficient way to connect job seekers with job providers. We understand that life can be busy, and finding trustworthy help can be challenging. That's why we strive to simplify this process, allowing both job seekers and providers to connect quickly and efficiently.
-            </p>
-        </section>
+        </div>
+    </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="container my-5">
-            <h1>Leave a message</h1>
-            <form action="submit_contact.php" method="post">
-                <div class="mb-3">
+    <div class="row align-items-center mb-5">
+        <div class="col-md-2 text-center">
+            <i class="bi bi-lightbulb-fill display-4 text-warning"></i>
+        </div>
+        <div class="col-md-10">
+            <h4 class="text-warning">Our Vision</h4>
+            <p>
+                At YourWorkBuddy, our mission is to empower individuals by providing a seamless and efficient way to connect job seekers with job providers.
+                We simplify the process and prioritize trust, efficiency, and access for everyone.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Us Form -->
+    <div class="bg-light p-4 p-md-5 shadow-sm rounded mt-5">
+        <h3 class="mb-4"><i class="bi bi-envelope-fill text-primary"></i> Leave a Message</h3>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3">
                     <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                 </div>
-                <div class="mb-3">
+                <div class="col-md-6 mb-3">
                     <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                 </div>
-                <div class="mb-3">
-                    <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-        </section>
-    </main>
+            </div>
+            <div class="mb-3">
+                <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+
+        {% if success %}
+            <div class="alert alert-success mt-3">Your message has been sent successfully!</div>
+        {% endif %}
+    </div>
+</div>
+
 {% endblock %}

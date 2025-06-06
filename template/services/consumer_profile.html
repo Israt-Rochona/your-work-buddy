@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Consumer Profile</h2>
+
+    {% if messages %}
+    <div class="alert alert-info">
+        {% for message in messages %}
+            <!-- <p>{{ message }}</p> -->
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <!-- Profile Form -->
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="consumer_name">Consumer Name</label>
+                    <input type="text" name="consumer_name" class="form-control" value="{{ consumer.consumer_name }}" placeholder="Consumer Name" required>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="consumer_id">Consumer ID</label>
+                    <input type="number" name="consumer_id" class="form-control" value="{{ consumer.consumer_id }}" placeholder="Consumer ID" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" value="{{ consumer.email }}" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="contact_info">Contact Info</label>
+            <input type="text" name="contact_info" class="form-control" value="{{ consumer.contact_info }}" placeholder="Contact Info" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" name="location" class="form-control" value="{{ consumer.location }}" placeholder="Location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nid">NID</label>
+            <input type="number" name="nid" class="form-control" value="{{ consumer.nid }}" placeholder="NID" required>
+        </div>
+
+        <div class="form-group">
+            <label for="picture">Upload Picture (Optional)</label>
+            <input type="file" name="picture" class="form-control-file">
+            {% if consumer.picture %}
+                <p>Current Picture:</p>
+                <img src="{{ consumer.picture.url }}" alt="Profile Picture" class="img-thumbnail" style="max-width: 150px;">
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+    </form>
+
+</div>
+{% endblock %}

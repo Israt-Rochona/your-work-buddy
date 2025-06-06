@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3>Rate Provider: {{ provider.consumer_name }}</h3>
+    <h4>Service: {{ service.service_name }}</h4>
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Rating Input -->
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating (out of 5)</label>
+            <input type="number" class="form-control" id="rating" name="rating" step="0.1" min="0" max="5" required>
+        </div>
+
+        <!-- Remarks Input -->
+        <div class="mb-3">
+            <label for="remarks" class="form-label">Remarks</label>
+            <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
+        </div>
+
+        <!-- Review Input -->
+        <div class="mb-3">
+            <label for="review" class="form-label">Review</label>
+            <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit Rating</button>
+    </form>
+</div>
+{% endblock %}

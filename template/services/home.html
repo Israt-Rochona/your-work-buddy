@@ -1,79 +1,91 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="content-wrapper pb-5">
 
-		<div class="container-fluid p-0">
-			<div class="home-image p-0" style="background-image:url('Bg_image.jpg')">
+<div class="content-wrapper pb-5 position-relative">
 
-                    <div class="search-bar">
-                        <input type="text"  aria-label="Search">
-                        <button type="submit">Search</button>
-                    </div>
+  <!-- Hero Carousel -->
+  <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'background_home.jpg' %}" class="d-block w-100" style="height: 100vh; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'logo-color.png' %}" class="d-block w-100" style="height: 100vh; object-fit: cover;">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'logo.png' %}" class="d-block w-100" style="height: 100vh; object-fit: cover;">
+      </div>
+    </div>
+  </div>
 
-				<div class="home-content">
-					<h1> Find Reliable, On-Demand Services Anytime, Anywhere .</h1><br>
-					<h5>74/A Green Rd, Dhaka 1205</h5>
-					<a href="https://www.facebook.com/aamira.yamin.1?mibextid=ZbWKwL" class="btn btn-light mt-2">Contact us</a>
-				</div>
-			</div>
-		</div><br>
+  <!-- Overlay Content -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"
+       style="z-index: 2; background: rgba(0, 0, 0, 0.5);">
+    <div class="text-center text-light px-4">
+      <h1 class="display-4 fw-bold mb-3" style="color: #FFD700;">Find Reliable, On-Demand Services Anytime, Anywhere</h1>
+      <h5 class="mb-4" style="color: #F0E68C;">74/A Green Rd, Dhaka 1205</h5>
+      <a href="{% url 'contact_us' %}" class="btn btn-warning px-5 py-2 fw-bold text-dark">Contact Us</a>
+    </div>
+  </div>
 
-		<div class="mt-5 container bg-customg">
+</div>
 
-			<h2 class="text-center">Category</h2><br><br>
+<!-- Category Section -->
+<div class="container mt-5">
+  <h2 class="text-center font-weight-bold mb-4" style="color: #2E8B57;">Categories</h2>
+  <div class="row justify-content-center">
 
-			<div class="mt-2 row align-items-center">
-				<div class="col-md-3">
-                    <div class="card">
-                        <div class="cat-img mt-2" style="background-image:url('Card_image.jpg');">
-                        </div>
-                        <div class="text-center mt-3">
-                            <h5>Driving</h5>
-                            <p class="text-muted fs-16">We offer you the best services.</p>
-                        </div>
-                    </div>
-				</div>
+    <!-- Category Card: Driving -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-lg">
+        <div class="cat-img rounded-top" style="background-image: url('{% static "driver.jpg" %}'); background-size: cover; background-position: center; height: 200px;"></div>
+        <div class="card-body text-center">
+          <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Driving</h5>
+          <p class="text-muted">We offer you the best services.</p>
+        </div>
+      </div>
+    </div>
 
-				<div class="col-md-3">
-                    <div class="card">
-                        <div class="cat-img mt-2" style="background-image:url('Card_image.jpg');">
-                        </div>
-                        <div class="text-center mt-3">
-                            <h5> Housekeeping</h5>
-                            <p class="text-muted fs-16">We offer you the best services..</p>
-                        </div>
-                    </div>
-				</div>
+    <!-- Housekeeping -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-lg">
+        <div class="cat-img rounded-top" style="background-image: url('{% static "maid.jpg" %}'); background-size: cover; background-position: center; height: 200px;"></div>
+        <div class="card-body text-center">
+          <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Housekeeping</h5>
+          <p class="text-muted">We offer you the best services.</p>
+        </div>
+      </div>
+    </div>
 
-				<div class="col-md-3">
-                    <div class="card">
-                        <div class="cat-img mt-2" style="background-image:url('Card_image.jpg');">
-                        </div>
-                        <div class="text-center mt-3">
-                            <h5>Security</h5>
-                            <p class="text-muted fs-16">We offer you the best services.</p>
-                        </div>
-                    </div>
-				</div>
+    <!-- Security -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-lg">
+        <div class="cat-img rounded-top" style="background-image: url('{% static "sequrity.jpg" %}'); background-size: cover; background-position: center; height: 200px;"></div>
+        <div class="card-body text-center">
+          <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Security</h5>
+          <p class="text-muted">We offer you the best services.</p>
+        </div>
+      </div>
+    </div>
 
-                <div class="col-md-3">
-                    <div class="card">
-                        <div class="cat-img mt-2" style="background-image:url('Card_image.jpg');">
-                        </div>
-                        <div>
-                            <div class="text-center mt-3">
-                                <h5>Electrician</h5>
-                                <p class="text-muted fs-16">We offer you the best services.</p>
-                            </div>
-                    </div>
-				</div>
-			</div>
-            </div><br><br>
-			<div class="text-center mt-3">
-				<a href="{% url 'service' %}" class="btn btn-light">See More <i class="bi bi-arrow-right ml-1"></i></a>
-			</div><br>
-        </div><br><br><br>
+    <!-- Electrician -->
+    <div class="col-md-3 mb-4">
+      <div class="card border-0 shadow-lg">
+        <div class="cat-img rounded-top" style="background-image: url('{% static "Electritian.jpg" %}'); background-size: cover; background-position: center; height: 200px;"></div>
+        <div class="card-body text-center">
+          <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Electrician</h5>
+          <p class="text-muted">We offer you the best services.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- See More Button -->
+  <div class="text-center mt-4">
+    <a href="{% url 'service' %}" class="btn btn-success px-5 py-2 font-weight-bold">See More <i class="bi bi-arrow-right ml-1"></i></a>
+  </div>
+</div>
 
 {% endblock %}
-</div>

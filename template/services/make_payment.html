@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Confirm Payment</h4>
+        </div>
+        <div class="card-body">
+
+          <p><strong>Service:</strong> {{ service.service_name }}</p>
+          <p><strong>Provider:</strong> {{ provider.provider_name }}</p>
+          <p><strong>Rate per Hour:</strong> ${{ service.rate_per_hour }}</p>
+          <p><strong>Duration:</strong> {{ service.duration }} hours</p>
+
+          <hr>
+          <p><strong>Total Amount:</strong> ${{ total_payment }}</p>
+          <p><strong>Provider Receives:</strong> ${{ provider_share }}</p>
+          <p><strong>Service Charge (10%):</strong> ${{ company_cut }}</p>
+
+          <div class="alert alert-info mt-3">
+            <i class="bi bi-info-circle-fill"></i>
+            Note: A 10% service fee is deducted by YourWorkBuddy to support platform operations.
+          </div>
+
+          <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success btn-block">Make Payment</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

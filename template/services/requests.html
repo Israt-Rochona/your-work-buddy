@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3>Your Posted Jobs and Applied Providers</h3>
+    
+    {% for item in services_with_applications %}
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>{{ item.service.service_name }}</h4>
+            </div>
+            <div class="card-body">
+                <p><strong>Service Description:</strong> {{ item.service.description }}</p>
+                <p><strong>Rate per Hour:</strong> ${{ item.service.rate_per_hour }}</p>
+                <p><strong>Duration:</strong> {{ item.service.duration }} hours</p>
+                
+                <h5>Providers Who Applied:</h5>
+                {% if item.applied_providers %}
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Provider Name</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Contact Info</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for provider in item.applied_providers %}
+                                <tr>
+                                    <td>{{ provider.provider_name }}</td>
+                                    <td>{{ provider.location }}</td>
+                                    <td>{{ provider.contact_info }}</td>
+                                    <td>
+                                        <a href="{% url 'provider_detail' provider.id %}" class="btn btn-info btn-sm">Details</a>
+                                        <a href="{% url 'approve_provider' item.service.id provider.id %}" class="btn btn-info btn-sm">Approve</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No providers have applied yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

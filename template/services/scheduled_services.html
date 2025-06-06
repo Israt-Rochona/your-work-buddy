@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3>Scheduled Services</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Service Name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Provider Name</th>
+                <th>Provider Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in services %}
+                <tr>
+                    <td>{{ item.service.service_name }}</td>
+                    <td>{{ item.service.location }}</td>
+                    <td>{{ item.service.service_date }}</td>
+                    <td>{{ item.provider.provider_name }}</td>
+                    <td>{{ item.provider.contact_info }}</td>
+                    <td class="text-nowrap">
+                        {% with service_id=item.service.id provider_id=item.provider.id %}
+                            {% for history in item.service.service_history.all %}
+                                {% if history.user.id == item.provider.user.id %}
+                                    {% if history.status == 'rated' %}
+                                        <a href="{% url 'make_payment' service_id provider_id %}" class="btn btn-outline-primary btn-sm">
+                                            <i class="bi bi-credit-card"></i> Pay
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'rate_provider' provider_id service_id %}" class="btn btn-outline-success btn-sm mb-1">
+                                            <i class="bi bi-star-fill"></i> Rate
+                                        </a>
+                                        <a href="{% url 'cancel_service' service_id provider_id %}" class="btn btn-outline-danger btn-sm mb-1">
+                                            <i class="bi bi-x-circle"></i> Cancel
+                                        </a>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endwith %}
+                    </td>
+                    
+                    
+                    
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

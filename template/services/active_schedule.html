@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h3 class="mb-4">Active Schedule</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Provider Name</th>
+                <th scope="col">Service Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Location</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for schedule in active_services %}
+            <tr>
+                <td>{{ schedule.user.username }}</td>  <!-- Provider Name -->
+                <td>{{ schedule.service.service_name }}</td>  <!-- Service Name -->
+                <td>{{ schedule.created_at|date:"d M Y" }}</td>  <!-- Date -->
+                <td>{{ schedule.service.location }}</td>  <!-- Location (from the Service model) -->
+                <td>${{ schedule.service.rate_per_hour }}</td>  <!-- Price (from the Service model) -->
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" class="text-center">No active schedules found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

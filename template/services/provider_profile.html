@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Provider Profile</h2>
+    {% if messages %}
+    <div class="alert alert-info">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <!-- Profile Form -->
+    <form method="POST" enctype="multipart/form-data"> <!-- Added enctype -->
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="provider_name">Provider Name</label>
+                    <input type="text" name="provider_name" class="form-control" value="{{ provider.provider_name }}" placeholder="Provider Name" required >
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="provider_id">Provider ID</label>
+                    <input type="number" name="provider_id" class="form-control" value="{{ provider.provider_id }}" placeholder="Provider ID" required >
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="skills">Skills</label>
+            <textarea name="skills" class="form-control" placeholder="Enter skills" required >{{ provider.skills }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="certification">Certification</label>
+            <div class="form-check">
+                <input type="checkbox" name="certification" class="form-check-input" {% if provider.certification %} checked {% endif %} required >
+                <label class="form-check-label" for="certification">Certified</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="employement_type">Employment Type</label>
+            <input type="text" name="employement_type" class="form-control" value="{{ provider.employement_type }}" placeholder="Employment Type" required >
+        </div>
+
+        <div class="form-group">
+            <label for="nid">NID</label>
+            <input type="number" name="nid" class="form-control" value="{{ provider.nid }}" placeholder="NID" required >
+        </div>
+
+        <div class="form-group">
+            <label for="contact_info">Contact Info</label>
+            <input type="text" name="contact_info" class="form-control" value="{{ provider.contact_info }}" placeholder="Contact Info" required >
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" name="location" class="form-control" value="{{ provider.location }}" placeholder="Location" required >
+        </div>
+
+        <!-- Picture upload field -->
+        <div class="form-group">
+            <label for="picture">Upload Picture</label>
+            <input type="file" name="picture" class="form-control-file" required>
+            {% if provider.picture %}
+                <p>Current Picture:</p>
+                <img src="{{ provider.picture.url }}" alt="Profile Picture" class="img-thumbnail" style="max-width: 150px;">
+            {% endif %}
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+    </form>
+</div>
+{% endblock %}

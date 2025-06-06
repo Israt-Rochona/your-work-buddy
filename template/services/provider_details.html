@@ -9,10 +9,18 @@
         </div>
         <div class="card-body">
             <div class="row mb-3">
-                <div class="col-md-6">
-                    <strong>Provider Name:</strong> {{ provider.provider_name }}
+                <div class="col-md-3 d-flex justify-content-center align-items-center">
+                    <!-- Profile Picture -->
+                    {% if provider.picture %}
+                        <img src="{{ provider.picture.url }}" alt="Provider Picture" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                    {% else %}
+                        <div class="d-flex justify-content-center align-items-center" style="width: 150px; height: 150px; border-radius: 50%; background-color: #f0f0f0;">
+                            <span class="text-center" style="font-size: 24px; color: #ccc;">No Image</span>
+                        </div>
+                    {% endif %}
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-9">
+                    <strong>Provider Name:</strong> {{ provider.provider_name }}<br>
                     <strong>Provider ID:</strong> {{ provider.provider_id }}
                 </div>
             </div>
@@ -25,15 +33,11 @@
                 </div>
             </div>
             <div class="row mb-3">
-
                 <div class="col-md-6">
                     <strong>Rating:</strong> {{ provider.rating }}
                 </div>
             </div>
             <div class="row mb-3">
-                <div class="col-md-6">
-                    <strong>Total Work:</strong> {{ provider.total_work }}
-                </div>
                 <div class="col-md-6">
                     <strong>NID:</strong> {{ provider.nid }}
                 </div>
@@ -45,6 +49,24 @@
                 <div class="col-md-6">
                     <strong>Location:</strong> {{ provider.location }}
                 </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="mt-4">
+                <strong>Reviews:</strong>
+                {% if reviews %}
+                    <ul class="list-group mt-2">
+                        {% for review in reviews %}
+                            <li class="list-group-item">
+                                <strong>Rating:</strong> {{ review.rating }} / 5 <br>
+                                <strong>Remarks:</strong> {{ review.remarks }} <br>
+                                <small>Reviewed by: {{ review.consumer.consumer_name }} on {{ review.created_at }}</small>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No reviews yet for this provider.</p>
+                {% endif %}
             </div>
         </div>
     </div>

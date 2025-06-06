@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Bootstrap container to center content -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Card to display service details -->
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header text-center bg-primary text-white">
+                    <h3>Service Information</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        
+                        <li class="list-group-item">
+                            <strong>Service Name:</strong> {{ service.service_name }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Description:</strong> {{ service.description }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Rate per Hour:</strong> ${{ service.rate_per_hour }}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Duration:</strong> {{ service.duration }} hours
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Location:</strong> {{ service.location }}
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'receiver_detail' id=service.posted_by.id %}" class="btn btn-secondary">See Details On Consumer</a>
+                </div>
+                {% if user.user_type == 'provider' %}
+                    <div class="card-footer text-center">
+                        {% if not service.hide %}
+                            <a href="{% url 'add_service_history' service.id %}" class="btn btn-info">Apply</a>
+                        {% else %}
+                            <p class="text-muted">This service is no longer available.</p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                
+                <!-- New Section for "See Details On Consumer" -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
