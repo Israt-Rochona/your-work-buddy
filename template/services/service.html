@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<<<<<<< HEAD
 
 <div class="container py-5">
     <h2 class="text-center mb-4">Browse Available Services</h2>
@@ -32,12 +33,40 @@
                         <a href="{% url 'service_detail' id=p.id %}" class="btn btn-outline-primary btn-sm w-100">
                             <i class="bi bi-eye-fill"></i> View Details
                         </a>
+=======
+<div class="container mt-3">
+    <!-- Search form -->
+    <form method="POST" class="mb-3">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" class="form-control" name="search" placeholder="Search for a service..." aria-label="Search">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+
+    <!-- Service cards -->
+    <div class="row">
+    {% for p in service %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ p.service_name }}</h5>
+                    <p class="card-text">ID: {{ p.service_id }}</p>
+                    <p class="card-text">Rate per hour: ${{ p.rate_per_hour }}</p>
+                    <p class="card-text">Duration: {{ p.duration }} hours</p>
+                    <div class="mt-auto text-center">
+                        <a href="{% url 'service_detail' id=p.id %}" class="btn btn-primary">View Details</a>
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
                     </div>
                 </div>
             </div>
         </div>
     {% empty %}
+<<<<<<< HEAD
         <div class="col-12 text-center mt-5">
+=======
+        <div class="col-12 text-center">
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
             <p class="text-muted">No services found matching your search.</p>
         </div>
     {% endfor %}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e461aa41-6aac-4ded-942a-3cee0d0d0b90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/your-work-buddy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Your_Work_Buddy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Your_Work_Buddy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Your_Work_Buddy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Your_Work_Buddy/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/URLS.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0002_alter_consumer_contact_info_alter_consumer_nid_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0003_remove_consumer_rating.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0004_rename_service_provider_provider.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0005_provider_rating_provider_total_work_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0006_provider_contact_info_provider_location_provider_nid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/migrations/0007_remove_consumer_user_remove_provider_user_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/consumer_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/consumer_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/provider.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/provider.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/provider_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/provider_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/services/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/services/service.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2rA40uCwo4bYkGuQ8zshloB58QU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/lenovo/Desktop/New folder (2)/your-work-buddy"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e461aa41-6aac-4ded-942a-3cee0d0d0b90" name="Changes" comment="" />
+      <created>1735988326148</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1735988326148</updated>
+    </task>
+    <servers />
+  </component>
+</project>

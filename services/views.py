@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import *
 from .forms import *
@@ -7,6 +12,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import login as auth_login
 from django.db.models import QuerySet
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from django.db.models import Avg
 
 
@@ -40,6 +46,8 @@ def about_us(request):
 
     return render(request, 'services/About_us.html' ,{ 'success': False})
 
+=======
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
 
 # Create your views here.
 def home(request):
@@ -72,6 +80,10 @@ def contact_us(request):
         return render(request, 'services/contact_us.html', {'success': True})
 
     return render(request, 'services/contact_us.html', {'success': False})
+
+
+def contact_us(request):
+    return render (request,template_name='services/contact_us.html')
 
 
 def get_help(request):
@@ -474,14 +486,24 @@ def scheduled_services(request):
         return render(request, 'services/error.html', {'error_message': str(e)})
     
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
 @login_required
 def rate_provider(request, provider_id, service_id):
     provider = get_object_or_404(Provider, id=provider_id)
     service = get_object_or_404(Service, id=service_id)
+<<<<<<< HEAD
+=======
+    
+    # Fetch the consumer object related to the current logged-in user
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
     cons = get_object_or_404(consumer, user=request.user)
 
     if request.method == "POST":
         try:
+<<<<<<< HEAD
             rating = float(request.POST['rating'])
             remarks = request.POST.get('remarks', '')
             review_text = request.POST.get('review', '')
@@ -520,10 +542,37 @@ def rate_provider(request, provider_id, service_id):
             messages.success(request, "Rating submitted successfully!")
             return redirect('make_payment', service_id=service.id, provider_id=provider.id)
 
+=======
+            # Get rating data from the form
+            rating = float(request.POST['rating'])
+            remarks = request.POST.get('remarks', '')
+            review = request.POST.get('review', '')
+
+            # Create a new Review object
+            Review.objects.create(
+                provider=provider,
+                service=service,
+                consumer=cons,  # Store the consumer object
+                rating=rating,
+                remarks=remarks,
+                review=review,
+            )
+
+            # Update provider's rating
+            # provider.total_work += 1
+            provider.rating = (
+                (provider.rating * (provider.total_work - 1)) + rating
+            ) / provider.total_work
+            provider.save()
+
+            messages.success(request, "Rating submitted successfully!")
+            return redirect('scheduled_services')
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
         except Exception as e:
             messages.error(request, f"Error submitting rating: {e}")
             return redirect('rate_provider', provider_id=provider_id, service_id=service_id)
 
+<<<<<<< HEAD
 
     return render(request, 'services/rate_provider.html', {'provider': provider, 'service': service})
 
@@ -609,3 +658,6 @@ def wallet_view(request):
         'history': history,
         'total_balance': total
     })
+=======
+    return render(request, 'services/rate_provider.html', {'provider': provider, 'service': service})
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f

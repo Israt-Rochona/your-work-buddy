@@ -4,6 +4,7 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<<<<<<< HEAD
     <ul class="navbar-nav me-auto">
 
       {% if user.is_authenticated %}
@@ -41,6 +42,104 @@
           <li class="nav-item me-3"><a class="nav-link" href="{% url 'register' %}">Sign Up</a></li>
           <li class="nav-item me-3"><a class="nav-link" href="{% url 'login' %}">Log In</a></li>
         {% endif %}
+=======
+    <ul class="navbar-nav mr-auto">
+
+      {% if user.is_authenticated %}
+          <!-- If user is authenticated, show Logout and User-type specific links -->
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+          </li>
+          {% if user.user_type == 'provider' %}
+            <li class="nav-item mr-3">
+              <a class="nav-link" href="{% url 'service' %}">Job Offers</a>
+            </li>
+            <li class="nav-item mr-3" >
+              <a class="nav-link" href="{% url 'job_status' %}">Job Status</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a class="nav-link" href="{% url 'active_schedule' %}">Active Schedule</a>
+            </li>
+          {% else %}
+
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'post_job' %}">Post a Job</a>
+          </li>
+
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'service' %}">Job Offers</a>
+          </li>
+
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'requests' %}">Requests</a>
+          </li>
+
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'scheduled_services' %}">Scheduled Services</a>
+          </li>
+
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'provider' %}">Providers</a>
+          </li>
+
+          {% endif %}
+
+            <li class="nav-item mr-3">
+              <a class="nav-link" href="{% url 'about_us' %}">About</a>
+            </li>
+            <li class="nav-item mr-3">
+              <a class="nav-link" href="{% url 'help' %}">Help</a>
+            </li>
+      {% else %}
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'help' %}">Help</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'service' %}">Services</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a class="nav-link" href="{% url 'provider' %}">Providers</a>
+        </li>
+      {% endif %}
+      
+     
+
+
+      
+    </ul>
+
+
+    <div class="right_nab mr-5 pr-5">
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="signupDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign Up
+          </a>
+          <div class="dropdown-menu" aria-labelledby="signupDropdown">
+            <a class="dropdown-item" href="{% url 'new_provider' %}">Service Provider</a>
+            <a class="dropdown-item" href="{% url 'new_receiver' %}">Service Receiver</a>
+          </div>
+        </li> -->
+          {% if user.is_authenticated %}
+          <!-- If user is authenticated, show Logout -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+          </li>
+          {% endif %}
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
       </ul>
     </div>
   </div>

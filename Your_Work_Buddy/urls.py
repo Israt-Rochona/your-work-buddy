@@ -53,12 +53,15 @@ urlpatterns = [
     path('signup/provider/', s_views.AddNewProvider, name='new_provider'),
     path('signup/receiver/', s_views.AddNewReceiver, name='new_receiver'),
 
+<<<<<<< HEAD
     path('cancel-service/<int:service_id>/<int:provider_id>/', s_views.cancel_service, name='cancel_service'),
     # path('make-payment/<int:service_id>/<int:provider_id>/', views.make_payment, name='make_payment'),  # placeholder
     path('make-payment/<int:service_id>/<int:provider_id>/', s_views.make_payment, name='make_payment'),
     path('wallet/', s_views.wallet_view, name='wallet'),
 
 
+=======
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
 ] 
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

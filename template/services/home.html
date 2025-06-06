@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 
+<<<<<<< HEAD
 <div class="content-wrapper pb-5 position-relative">
 
   <!-- Hero Carousel -->
@@ -87,5 +89,78 @@
     <a href="{% url 'service' %}" class="btn btn-success px-5 py-2 font-weight-bold">See More <i class="bi bi-arrow-right ml-1"></i></a>
   </div>
 </div>
+=======
+  <!-- Full-height hero section with centered content -->
+  <div class="container-fluid p-0 d-flex justify-content-center align-items-center" 
+       style="height: 100vh; background-image: url('{% static "home-background.jpg" %}'); background-size: cover; background-position: center;">
+    <div class="text-center text-light d-flex flex-column justify-content-center align-items-center" style="background: rgba(0, 0, 0, 0.5); padding: 2rem; border-radius: 15px;">
+      <h1 class="display-4 font-weight-bold mb-3" style="color: #FFD700;">Find Reliable, On-Demand Services Anytime, Anywhere</h1>
+      <h5 class="mb-4" style="color: #F0E68C;">74/A Green Rd, Dhaka 1205</h5>
+      <a href="{% url 'contact_us' %}" class="btn btn-warning px-5 py-2 font-weight-bold text-dark">Contact Us</a>
+    </div>
+  </div>
 
+  <!-- Category Section -->
+  <div class="container mt-4"> <!-- Reduced top margin -->
+    <h2 class="text-center font-weight-bold mb-4" style="color: #2E8B57;">Categories</h2>
+    <div class="row justify-content-center">
+      
+      <!-- Category Card -->
+      <div class="col-md-3 mb-4">
+        <div class="card border-0 shadow-lg">
+          <div class="cat-img rounded-top" style="background-image: url('{% static "driver.jpg" %}'); background-size: cover; background-position: center; height: 200px;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Driving</h5>
+            <p class="text-muted">We offer you the best services.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Card -->
+      <div class="col-md-3 mb-4">
+        <div class="card border-0 shadow-lg">
+          <div class="cat-img rounded-top" style="background-image: url('{% static "maid.jpg" %}'); background-size: cover; background-position: center; height: 200px;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Housekeeping</h5>
+            <p class="text-muted">We offer you the best services.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Card -->
+      <div class="col-md-3 mb-4">
+        <div class="card border-0 shadow-lg">
+          <div class="cat-img rounded-top" style="background-image: url('{% static "sequrity.jpg" %}'); background-size: cover; background-position: center; height: 200px;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Security</h5>
+            <p class="text-muted">We offer you the best services.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Card -->
+      <div class="col-md-3 mb-4">
+        <div class="card border-0 shadow-lg">
+          <div class="cat-img rounded-top" style="background-image: url('{% static "Electritian.jpg" %}'); background-size: cover; background-position: center; height: 200px;">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title font-weight-bold" style="color: #2E8B57;">Electrician</h5>
+            <p class="text-muted">We offer you the best services.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- See More Button -->
+    <div class="text-center mt-4">
+      <a href="{% url 'service' %}" class="btn btn-success px-5 py-2 font-weight-bold">See More <i class="bi bi-arrow-right ml-1"></i></a>
+    </div>
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
+
+  </div>
+</div>
 {% endblock %}

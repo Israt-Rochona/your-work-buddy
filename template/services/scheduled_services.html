@@ -21,6 +21,7 @@
                     <td>{{ item.service.service_date }}</td>
                     <td>{{ item.provider.provider_name }}</td>
                     <td>{{ item.provider.contact_info }}</td>
+<<<<<<< HEAD
                     <td class="text-nowrap">
                         {% with service_id=item.service.id provider_id=item.provider.id %}
                             {% for history in item.service.service_history.all %}
@@ -44,6 +45,12 @@
                     
                     
                     
+=======
+                    <td>
+                        <a href="{% url 'rate_provider' item.provider.id item.service.id %}" class="btn btn-info btn-sm">Rate Service</a>
+                    </td>
+                    
+>>>>>>> 4126b94b043fda0ca389497191cff73936285a0f
                 </tr>
             {% endfor %}
         </tbody>
